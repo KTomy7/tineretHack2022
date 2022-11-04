@@ -9,9 +9,9 @@ const localStrategy = require('passport-local');
 const ExpressError = require('./utils/ExpressError');
 const Project = require('./models/project');
 const Product = require('./models/product');
-const User = require('./models/user');
+const Admin = require('./models/admin');
 
-const userRoutes = require('./routes/users');
+const adminRoutes = require('./routes/admin');
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/tineretHack');
@@ -48,12 +48,12 @@ app.use(session(sessionConfig));
 // Passport Configuration
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use(new localStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+passport.use(new localStrategy(Admin.authenticate()));
+passport.serializeUser(Admin.serializeUser());
+passport.deserializeUser(Admin.deserializeUser());
 
 // Routes
-app.use('/', userRoutes);
+app.use('/', adminRoutes);
 
 app.get('/', (req, res) => {
     res.render('home'); 

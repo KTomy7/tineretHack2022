@@ -1,20 +1,9 @@
 const express = require('express');
 const passport = require('passport');
 const catchAsync = require('../utils/catchAsync');
-const User = require('../models/user');
+const Admin = require('../models/admin');
 
 const router = express.Router();
-
-router.get('/register', (req, res) => {
-    res.render('auth/register');
-});
-
-router.post('/register', catchAsync(async(req, res) => {
-    // const { email, username, password } = req.body;
-    // const newUser = new User({ email, username });
-    // const registeredUser = await User.register(newUser, password);
-    // res.redirect('/');
-}));
 
 router.get('/login', (req, res) => {
     res.render('auth/login');
