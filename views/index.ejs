@@ -1,21 +1,26 @@
 <%- layout('layouts/boilerplate') %>
 
-<div class="container">
-    <H1 class="d-flex justify-content-center">Portal virtual pentru monitorizarea investitiilor publice</H1>
-</div>
+    <div class="container">
+        <H1 class="d-flex justify-content-center">Portal virtual pentru monitorizarea investitiilor publice</H1>
+    </div>
 
-<div class="container">
-    <span>Selecteaza Localitatea:</span>
-      
-    <div class="dropdown">
-        <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown Example
-        </a>
-        <ul class="dropdown-menu">
-            <% for(let i=0; i <locations.length; i++) {%>
-                <li class="dropdown-item">
-                    <%= locations[i].name %>
-                </li>
-                <% } %>
-        </ul>
+    <div class="container">
+        <span>Selecteaza Localitatea:</span>
+
+        <div class="dropdown">
+            <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Dropdown Example
+            </a>
+            <ul class="dropdown-menu">
+                <% for(let i=0; i <locations.length; i++) {%>
+                    <li class="dropdown-item">
+                        <a href="/location/<%= locations[i].name %>">
+                            <%= locations[i].name %>
+                        </a>
+
+                    </li>
+                    <% } %>
+            </ul>
+        </div>
     </div>

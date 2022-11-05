@@ -1,0 +1,21 @@
+<%- layout('layouts/boilerplate') %>
+
+    <% if (projects.length !=0) { %>
+
+        <h1>
+            Toate proiectele in desfasurare in localitatea <%= currentLocation[0].name %>
+        </h1>
+
+        <% for (let i=0; i < projects.length; i++) {%>
+            <h2>
+                <%=projects[i].name%>
+            </h2>
+            <% } %>
+
+                <% } else { %>
+
+                    <h1>
+                        Momentan nu exista proiecte in desfasurare in localitatea <%= currentLocation[0].name %>
+                    </h1>
+
+                    <% } %>

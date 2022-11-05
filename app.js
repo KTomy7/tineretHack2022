@@ -62,8 +62,16 @@ app.use((req, res, next) => {
 app.use('/', adminRoutes);
 
 app.get('/', async (req, res) => {
-    const locations = await Location.find({}); 
+    const locations = await Location.find({});
+
     res.render('index', { locations });
+});
+
+app.get('/location/:localitate', async (req, res) => {
+    console.log(req.params.localitate)
+    const currentLocation = await Location.find({ name: req.params.localitate });
+    const projects = await Project.find({ location: req.params.localitate });
+    res.render('localitate', { currentLocation, projects });
 });
 
 app.get('/admin', async (req, res) => {

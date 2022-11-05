@@ -13,6 +13,8 @@ db.once('open', () => {
 
 const seedData = async () => {
     await Location.deleteMany({});
+    await Project.deleteMany({});
+    await Admin.deleteMany({});
 
     await Location.insertMany([
         { name: 'Cluj-Napoca' },
@@ -28,8 +30,9 @@ const seedData = async () => {
     ]);
 
     await Project.insertMany([
-        { name: "Pavaj in Rascacatii de Vale", totalCost: 69, company: "Fratii Jder SRL", description: "100% cinstit", startDate: "10-10-2012", endDate: "12-12-2012", location: "Rascacati de Deal", products: null },
-        { name: "Pavaj in Rascacatii de Valeee", totalCost: 69, company: "Fratii Jder SRL", description: "100% cinstit", startDate: "10-10-2012", endDate: "12-12-2012", location: "Rascacati de Deal", products: null }
+        { name: "Pavaj in Turda", totalCost: 69, company: "Fratii Jder SRL", description: "100% cinstit", startDate: "10-10-2012", endDate: "12-12-2012", location: "Turda", products: null },
+        { name: "Amenajare camin cultural", totalCost: 69, company: "Fratii Jder SRL", description: "100% cinstit", startDate: "10-10-2012", endDate: "12-12-2012", location: "Turda", products: null },
+        { name: "Modernizare birt", totalCost: 69, company: "Fratii Jder SRL", description: "100% cinstit", startDate: "10-10-2012", endDate: "12-12-2012", location: "Huedin", products: null }
     ]);
 
 
