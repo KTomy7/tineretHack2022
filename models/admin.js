@@ -8,6 +8,7 @@ const adminSchema = new Schema({
         required: true,
         unique: true
     },
+    password: String,
     location: String
 });
 

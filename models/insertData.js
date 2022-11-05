@@ -1,4 +1,6 @@
 const Location = require('./location');
+const Project = require('./project');
+const Product = require('./product');
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://127.0.0.1:27017/tineretHack');
@@ -23,6 +25,14 @@ const seedData = async () => {
         { name: 'Alunis' },
         { name: 'Apahida' }
     ]);
+
+    await Project.insertMany([
+        { name: "Pavaj in Rascacatii de Vale", totalCost: 69, company: "Fratii Jder SRL", description: "100% cinstit", startDate: "10-10-2012", endDate: "12-12-2012", location: "Rascacati de Deal", products: null },
+        { name: "Pavaj in Rascacatii de Valeee", totalCost: 69, company: "Fratii Jder SRL", description: "100% cinstit", startDate: "10-10-2012", endDate: "12-12-2012", location: "Rascacati de Deal", products: null }
+    ]);
+
+
+
 }
 
 seedData().then(() => {

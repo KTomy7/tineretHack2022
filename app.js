@@ -63,6 +63,10 @@ app.get('/', async (req, res) => {
     res.render('index', { locations });
 });
 
+app.get('/admin', async (req, res) => {
+    res.render('admin');
+});
+
 app.all('*', (req, res, next) => {
     next(new ExpressError('Page Not Found', 404));
 });
