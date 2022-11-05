@@ -10,11 +10,11 @@ router.get('/index', async (req, res) => {
 });
 
 router.get('/new', (req, res) => {
-    res.render('new');
+    res.render('admin/new');
 });
 
-route.post('/', (req, res) => {
-    
+router.post('/', (req, res) => {
+
 });
 
 module.exports = router; 
