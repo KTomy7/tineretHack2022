@@ -1,16 +1,16 @@
 <%- layout('layouts/boilerplate') %>
 
     <div class="container">
-        <H1 class="d-flex justify-content-center">Portal virtual pentru monitorizarea investitiilor publice</H1>
+        <H1 class="d-flex m-2 align-items-center justify-content-center">Portal virtual pentru monitorizarea
+            investitiilor publice</H1>
     </div>
 
-    <div class="container">
-        <span>Selecteaza Localitatea:</span>
+    <div class="container m-2 d-flex justify-content-center align-items-center">
 
         <div class="dropdown">
             <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                Dropdown Example
+                Alege localitatea
             </a>
             <ul class="dropdown-menu">
                 <% for(let i=0; i <locations.length; i++) {%>

@@ -7,9 +7,22 @@
         </h1>
 
         <% for (let i=0; i < projects.length; i++) {%>
-            <h2>
-                <%=projects[i].name%>
-            </h2>
+            <div>
+
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="<%= projects[i].image%>" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%=projects[i].name%>
+                        </h5>
+                        <p class="card-text">
+                            <%= projects[i].description %>
+                        </p>
+                        <a href="/location/<%= currentLocation[0].name %>/<%=projects[i].projectId%>"
+                            class="btn btn-primary">Informatii</a>
+                    </div>
+                </div>
+            </div>
             <% } %>
 
                 <% } else { %>

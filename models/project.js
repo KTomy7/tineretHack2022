@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const projectSchema = new mongoose.Schema({
+    projectId: Number,
     name: String,
     totalCost: Number,
     company: String,
@@ -9,6 +10,7 @@ const projectSchema = new mongoose.Schema({
     startDate: Date,
     endDate: Date,
     location: String,
+    image: String,
     products: [
         {
             type: Schema.Types.ObjectId,
