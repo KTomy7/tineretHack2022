@@ -1,1 +1,21 @@
-<%- layout('layouts/boilerplate') %> 
+<%- layout('layouts/boilerplate') %>
+
+<div class="container text-center align-middle border rounded-end p-4 my-3">
+  <form>
+    <div class="mb-3">
+      <label for="admin" class="form-label">ADMIN</label>
+      <input
+        type="admin"
+        class="form-control"
+        id="admin"
+        aria-describedby="admin"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" />
+    </div>
+
+    <button type="button" class="btn btn-dark">Login</button>
+  </form>
+</div>
