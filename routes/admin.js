@@ -10,13 +10,18 @@ router.get('/login', (req, res) => {
 });
 
 router.post('/login', passport.authenticate('local', { failureFlash: true, failureRedirect: '/login' }), async(req, res) => {
-    // res.redirect('/');
+    res.redirect('/');
+    console.log("Successful login!!!");
 });
 
-router.get('/logout', (req, res) => {
-    req.logout();
+router.get('/logout', (req, res, next) => {
+    req.logout(function (err) {
+        if (err) {
+            return next(err);
+        }
+    });
     console.log('You have been logged out!');
-    res.redirect('/');
+    res.redirect('/admin');
 });
 
 module.exports = router; 
