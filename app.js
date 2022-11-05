@@ -9,12 +9,13 @@ const localStrategy = require('passport-local');
 const ExpressError = require('./utils/ExpressError');
 const Project = require('./models/project');
 const Product = require('./models/product');
+const Location = require('./models/location');
 const Admin = require('./models/admin');
 
 const adminRoutes = require('./routes/admin');
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/tineretHack');
+mongoose.connect('mongodb://127.0.0.1:27017/tineretHack');
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
@@ -43,7 +44,7 @@ const sessionConfig = {
         maxAge: 1000 * 60 * 60 * 24 * 7
     }
 }
-app.use(session(sessionConfig));    
+app.use(session(sessionConfig));
 
 // Passport Configuration
 app.use(passport.initialize());
@@ -55,8 +56,11 @@ passport.deserializeUser(Admin.deserializeUser());
 // Routes
 app.use('/', adminRoutes);
 
-app.get('/', (req, res) => {
-    res.render('index'); 
+app.get('/', async (req, res) => {
+    const locations = await Location.find({});
+
+    console.log(locations)
+    res.render('index', { locations });
 });
 
 app.all('*', (req, res, next) => {

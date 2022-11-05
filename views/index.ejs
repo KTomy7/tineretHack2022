@@ -1,12 +1,12 @@
-<%- layout('layouts/boilerplate') %> 
-
+<%- layout('layouts/boilerplate') %>
 
     <nav class="navbar navbar-expand-lg navbar-dark text-white bg-dark" id="navAdv">
         <div class="container-fluid">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon">
+                </span>
             </button>
             <div class="container collapse navbar-collapse lg-d-flex justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
@@ -19,24 +19,26 @@
                     <li class="nav-item linkBar">
                         <a class="nav-link xl-mx-3" href="competitions.html">Motivatia Noastra</a>
                     </li>
-                
+
                 </ul>
             </div>
         </div>
     </nav>
-    
-    <div class = "container">
-    <H1 class ="d-flex justify-content-center">Portal virtual pentru monitorizarea investitiilor publice</H1>
+
+    <div class="container">
+        <H1 class="d-flex justify-content-center">Portal virtual pentru monitorizarea investitiilor publice</H1>
     </div>
 
-    <div class = "container">
+    <div class="container">
         <span>Selecteaza Localitatea:</span>
-    <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-        <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-          <li><a href="#"></a></li>
-          <li><a href="#">CSS</a></li>
-          <li><a href="#">JavaScript</a></li>
-        </ul>
-    </div>
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+                <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <% for(let i=0; i <locations.length; i++) {%>
+                    <li class="dropdown-item">
+                        <%= locations[i].name %>
+                    </li>
+                    <% } %>
+            </ul>
+        </div>
