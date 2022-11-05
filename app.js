@@ -86,6 +86,8 @@ app.get('/admin', async (req, res) => {
     res.render('admin');
 });
 
+app.use('/uploads', express.static('uploads'))
+
 app.all('*', (req, res, next) => {
     next(new ExpressError('Page Not Found', 404));
 });
