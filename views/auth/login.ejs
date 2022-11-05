@@ -1,6 +1,7 @@
 <%- layout('layouts/boilerplate') %>
 
-<div class="container text-center align-middle border rounded-end p-4 my-3">
+<h1 class="display1 text-center text-dark my-5">Consiliul Local</h1>
+<div class="container text-center border rounded-3 p-5 my-5">
   <form>
     <div class="mb-3">
       <label for="admin" class="form-label">ADMIN</label>
@@ -9,13 +10,18 @@
         class="form-control"
         id="admin"
         aria-describedby="admin"
+        placeholder="admin"
       />
     </div>
     <div class="mb-3">
       <label for="password" class="form-label">Password</label>
-      <input type="password" class="form-control" id="password" />
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        placeholder="password"
+      />
     </div>
-
     <button type="button" class="btn btn-dark">Login</button>
   </form>
 </div>
