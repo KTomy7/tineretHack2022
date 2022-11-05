@@ -8,8 +8,10 @@ const adminSchema = new Schema({
         required: true,
         unique: true
     },
-    password: String,
-    location: String
+    location: {
+        type: Schema.Types.ObjectId,
+        ref: 'Location'
+    }
 });
 
 adminSchema.plugin(passportLocalMongoose);

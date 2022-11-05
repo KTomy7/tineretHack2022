@@ -54,12 +54,15 @@ passport.serializeUser(Admin.serializeUser());
 passport.deserializeUser(Admin.deserializeUser());
 
 // Routes
+app.use((req, res, next) => {
+    res.locals.currentUser = req.user;
+    next();
+});
+
 app.use('/', adminRoutes);
 
 app.get('/', async (req, res) => {
-    const locations = await Location.find({});
-
-    console.log(locations)
+    const locations = await Location.find({}); 
     res.render('index', { locations });
 });
 

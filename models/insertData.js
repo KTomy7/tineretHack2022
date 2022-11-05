@@ -2,6 +2,7 @@ const Location = require('./location');
 const Project = require('./project');
 const Product = require('./product');
 const mongoose = require('mongoose');
+const Admin = require('./admin');
 
 mongoose.connect('mongodb://127.0.0.1:27017/tineretHack');
 const db = mongoose.connection;
@@ -33,6 +34,8 @@ const seedData = async () => {
 
 
 
+    const admin = new Admin({ email: "admin@gmail.com", username: "admin" });
+    const registeredAdmin = await Admin.register(admin, "admin");
 }
 
 seedData().then(() => {
