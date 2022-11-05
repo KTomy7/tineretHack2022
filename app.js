@@ -77,7 +77,8 @@ app.get('/location/:localitate', async (req, res) => {
 
 app.get('/location/:localitate/:id', async (req, res) => {
     const currentLocation = await Location.find({ name: req.params.localitate });
-    const project = await Project.find({ location: req.params.localitate, project: req.params.id });
+    const project = await Project.findById(req.params.id);
+    console.log(project);
     res.render('projectInfo', { currentLocation, project });
 });
 

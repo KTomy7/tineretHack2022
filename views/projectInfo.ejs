@@ -1,1 +1,31 @@
 <%- layout('layouts/boilerplate') %>
+    <h1>
+        <%= project.name %>
+    </h1>
+
+    <div>
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-gray btn-lg" data-bs-toggle="modal" data-bs-target="#myModal">Vizualizare
+            factura</button>
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+
+                        <iframe src="https://drive.google.com/file/d/1PTJs7BFCc751WJ3hGEkqxUP1qHF8PW2l/preview"
+                            width="765" height="480" allow="autoplay"></iframe>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
