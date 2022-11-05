@@ -2,21 +2,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const projectSchema = new mongoose.Schema({
-    projectId: Number,
     name: String,
     totalCost: Number,
     company: String,
     description: String,
-    startDate: Date,
-    endDate: Date,
+    startDate: String,
+    endDate: String,
     location: String,
-    image: String,
-    products: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Product'
-        }
-    ]
+    image: String
 })
 
 module.exports = mongoose.model('Project', projectSchema);

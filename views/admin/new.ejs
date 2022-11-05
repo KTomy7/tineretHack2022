@@ -1,11 +1,55 @@
 <%- layout('layouts/boilerplate') %>
 
-<h1>Add a new project</h1>
+<h1 class="display1 text-center my-5">Adauga Un Proiect</h1>
 
-<form method="POST" action="/" enctype = "multipart/form-data">
-    <div class="mb-3">
-        <input type="file" name="file"/>
-    </div>
+<form method="POST" action="/admin">
     
-    <button>Create</button>
+    <div class="container border rounded-3 p-5 my-5">
+          <div class="mb-3">
+            <label for="project" class="form-label">Numele proiectului:</label>
+            <input type="text" class="form-control" id="project" aria-describedby="project" name="name" />
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Descrierea proiectului</label>
+  
+            <textarea
+              type="text"
+              id="description"
+              name="description"
+              rows="10" style="width: 100%"></textarea>
+          </div>
+          <div class="row mb3">
+            <label for="stardDate" class="col-6 form-label">Data de start</label>
+            <label for="endDate" class="col-6 form-label">Data finalizarii</label>
+          </div>
+          <div class="row mb3">
+            <div class="col-6">
+              <input
+                class="me-3 text-center"
+                type="date"
+                name="startDate"
+                id="startDate"
+                style="width: 100%"
+              />
+            </div>
+            <!-- <label for="endDate">Data finalizarii</label> -->
+            <div class="col-6">
+              <input
+                class="text-center col-6"
+                type="date"
+                name="endDate"
+                id="endDate"
+                style="width: 100%"
+              />
+            </div>
+          </div>
+    
+          <div class="my-3">
+            <input type="file" name="file" value="Upload"/>
+          </div>
+  
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button type="submit" class="btn btn-dark">Creeaza</button>
+          </div>  
+    </div>
 </form>

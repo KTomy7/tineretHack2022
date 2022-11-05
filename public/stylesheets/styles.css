@@ -1,0 +1,23 @@
+.pencil {
+    color: gray;
+    width: 32px;
+    height: 32px;
+}
+
+.trash {
+    color: red;
+    width: 32px;
+    height: 32px;
+}
+
+.button, button:focus {
+    outline: none;
+    background: transparent;
+    border: 1px solid transparent;
+}
+
+.button:active {
+    outline: none;
+    background: transparent;
+    border: 1px solid grey;
+}
