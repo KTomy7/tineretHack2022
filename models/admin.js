@@ -10,7 +10,7 @@ const adminSchema = new Schema({
     },
     location: {
         type: Schema.Types.ObjectId,
-        ref: 'Location'
+        ref: 'Location' 
     }
 });
 

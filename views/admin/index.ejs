@@ -1,0 +1,28 @@
+<%- layout('layouts/boilerplate') %>
+
+<h1>Admin page</h1>
+
+<a class="btn btn-primary" href="/admin/new">Adauga proiect</a>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% for(let i = 0; i < projects.length; i++) { %>
+        <tr>
+            <td><%= projects[i].name %></td>
+            <td><%= projects[i].startDate.getDate() %>-<%= projects[i].startDate.getMonth() %>-<%= projects[i].startDate.getFullYear() %></td>
+            <td><%= projects[i].endDate.getDate() %>-<%= projects[i].endDate.getMonth() %>-<%= projects[i].endDate.getFullYear() %></td>
+            <td> 
+                <button type="button" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+        <% } %>
+    </tbody>
+  </table>

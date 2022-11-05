@@ -12,6 +12,7 @@ const Product = require('./models/product');
 const Location = require('./models/location');
 const Admin = require('./models/admin');
 
+const loginRoutes = require('./routes/login');
 const adminRoutes = require('./routes/admin');
 
 // Connect to MongoDB
@@ -59,7 +60,8 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/', adminRoutes);
+app.use('/', loginRoutes);
+app.use('/admin', adminRoutes);
 
 app.get('/', async (req, res) => {
     const locations = await Location.find({});
