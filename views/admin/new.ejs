@@ -1,41 +1,42 @@
 <%- layout('layouts/boilerplate') %>
 
-<h1 class="text-center my-4">Adauga un proiect nou</h1>
 
-<div class="row">
-  <div class="col-6 offset-3">
-    <form method="POST" action="/admin" enctype="multipart/form-data">
-      <div class="mb-3">
-        <label for="project" class="form-label">Numele proiectului:</label>
-        <input type="text" class="form-control" id="project" name="name" />
-      </div>
-      <div class="mb-3">
-        <label for="description" class="form-label">Descrierea proiectului:</label>
-        <textarea type="text" class="form-control" id="description" name="description" rows="6"></textarea>
-      </div>
-      <div class="row mb-3 justify-content-start">
-        <div class="col-3">
-          <label for="stardDate" class="form-label">Data inceperii:</label>
+  <h1 class="text-center my-4">Adauga un proiect nou</h1>
+
+  <div class="row">
+    <div class="col-6 offset-3">
+      <form method="POST" action="/admin" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="project" class="form-label">Numele proiectului:</label>
+          <input type="text" class="form-control" id="project" name="name" />
         </div>
-        <div class="col-3">
-          <input class="me-3" type="date" name="startDate" id="startDate" style="width: 100%"/>    
+        <div class="mb-3">
+          <label for="description" class="form-label">Descrierea proiectului:</label>
+          <textarea type="text" class="form-control" id="description" name="description" rows="6"></textarea>
         </div>
-      </div>
-      <div class="row mb-3 justify-content-start">
-        <div class="col-3">
-          <label for="endDate" class="form-label">Data finalizarii:</label>
+        <div class="row mb-3 justify-content-start">
+          <div class="col-3">
+            <label for="stardDate" class="form-label">Data inceperii:</label>
+          </div>
+          <div class="col-3">
+            <input class="me-3" type="date" name="startDate" id="startDate" style="width: 100%" />
+          </div>
         </div>
-        <div class="col-3">
-          <input type="date" name="endDate" id="endDate" style="width: 100%" />
+        <div class="row mb-3 justify-content-start">
+          <div class="col-3">
+            <label for="endDate" class="form-label">Data finalizarii:</label>
+          </div>
+          <div class="col-3">
+            <input type="date" name="endDate" id="endDate" style="width: 100%" />
+          </div>
         </div>
-      </div>
-      <div class="mb-4">
-        <label class="form-label" for="file">Incarca factura:</label>
-        <input class="form-control" type="file" name="file" id="file"/>
-      </div>
-      <div class="mb-3 text-center">
-        <button type="submit" class="btn btn-lg btn-dark">Creeaza</button>
-      </div>        
-    </form>
+        <div class="mb-4">
+          <label class="form-label" for="file">Incarca factura:</label>
+          <input class="form-control" type="file" name="file" id="file" />
+        </div>
+        <div class="mb-3 text-center">
+          <button type="submit" class="btn btn-lg btn-dark">Creeaza</button>
+        </div>
+      </form>
+    </div>
   </div>
-</div>

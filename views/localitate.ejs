@@ -2,18 +2,18 @@
 
     <% if (projects.length !=0) { %>
 
-        <h1>
+        <h1 class="display1 text-center mt-5 py-5">
             Toate proiectele in desfasurare in localitatea <%= currentLocation[0].name %>
         </h1>
 
         <div class="row container" style="width: 100%; margin-inline: auto;">
-
-            <div class="container d-flex flex-column flex-xl-row align-items-center">
+            <div class="container d-flex flex-column flex-lg-row align-items-center">
                 <% for (let i=0; i < projects.length; i++) {%>
                     <div class="col p-5 d-flex flex-column align-items-center">
 
-                        <div class="card" style="width: 100%">
-                            <img class="card-img-top " src="<%= projects[i].image%>" alt="Card image cap">
+                        <div class="card" style="min-width: 200px; max-width:300px">
+                            <img class="card-img-top img-thumbnail" src="<%= projects[i].image%>" alt="Card image cap"
+                                style="max-height: 200px;">
                             <div class="card-body">
                                 <h5 class="card-title">
                                     <%=projects[i].name%>
@@ -22,7 +22,7 @@
                                     <%= projects[i].description %>
                                 </p>
                                 <a href="/location/<%= currentLocation[0].name %>/<%=projects[i].id%>"
-                                    class="btn btn-primary">Informatii</a>
+                                    class="btn btn-dark">Informatii</a>
                             </div>
                         </div>
 

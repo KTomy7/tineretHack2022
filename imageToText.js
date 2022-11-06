@@ -12,7 +12,7 @@ function containsNumbers(str) {
 
 let nume = [];
 let k = 0;
-
+let servicesArray = [];
 let splitBara = [];
 
 tesseract
@@ -74,23 +74,14 @@ tesseract
             }
 
         }
-        /*
-     for(let i = 0; i < 4;i++)
-     {
-      if(numeLucrare[i].includes('buc'))
-      numeLucrare[i] = numeLucrare[i].slice(0,numeLucrare[i].indexOf('buc'))
-      console.log(numeLucrare[i]);
-      
-      if(numeUnitate[i] != 'buc' && !numeUnitate[i].includes('m'))
-      numeUnitate[i] = 'buc';
-      console.log(numeUnitate[i]);
-      console.log(cantitate[i]);
-       
-     }
-        */
 
+
+        services = [{ numeLucrare, numeUnitate, cantitate, pretUnitMan, pretUnitMan, pretUnitTot, valTotMan, valTotMat, valTot }];
+        servicesArray = services;
 
     })
     .catch((error) => {
         console.log(error.message)
     })
+
+module.exports = servicesArray;
