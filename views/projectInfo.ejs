@@ -1,11 +1,15 @@
 <%- layout('layouts/boilerplate') %>
-    <h1>
-        <%= project.name %>
-    </h1>
+    <div class="d-flex m-3 justify-content-center">
+        <h1 class="text-center">
+            <%= project.name %>
+        </h1>
+    </div>
 
-    <div>
+
+    <div class="d-flex justify-content-center">
         <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-gray btn-lg" data-bs-toggle="modal" data-bs-target="#myModal">Vizualizare
+        <button type="button" class="btn btn-dark btn-lg m-3" data-bs-toggle="modal"
+            data-bs-target="#myModal">Vizualizare
             factura</button>
         <!-- Modal -->
         <div id="myModal" class="modal fade" role="dialog">
@@ -25,6 +29,68 @@
                 </div>
             </div>
         </div>
+
+
+    </div>
+
+    <div class="d-flex justify-content-center m-3">
+        <h2>Deviz de munca:</h2>
+    </div>
+
+
+    <div class="d-flex justify-content-center bo">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Lucrare</th>
+                    <th scope="col">Cantitate</th>
+                    <th scope="col">U.M.</th>
+                    <th scope="col">Pret Unitar Material</th>
+                    <th scope="col">Pret Unitar Manopera</th>
+                    <th scope="col">Pret Unitar Total</th>
+                    <th scope="col">Valoare Totala Materiale</th>
+                    <th scope="col">Valoare Totala Manopera</th>
+                    <th scope="col">Valoare Totala</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(i=0; i <project.services.length; i++) {%>
+                    <tr>
+                        <th scope="row">
+                            <%= i + 1%>
+                        </th>
+                        <td>
+                            <%=project.services[i].nume%>
+                        </td>
+                        <td>
+                            <%=project.services[i].cantitate%>
+                        </td>
+                        <td>
+                            <%=project.services[i].unitateMasura%>
+                        </td>
+                        <td>
+                            <%=project.services[i].pretUnitarMaterial%>
+                        </td>
+                        <td>
+                            <%=project.services[i].pretUnitarManopera%>
+                        </td>
+                        <td>
+                            <%=project.services[i].pretUnitarTotal%>
+                        </td>
+                        <td>
+                            <%=project.services[i].valoareTotalaMaterial%>
+                        </td>
+                        <td>
+                            <%=project.services[i].valoareTotalaManopera%>
+                        </td>
+                        <td>
+                            <%=project.services[i].valoareTotala%>
+                        </td>
+                    </tr>
+                    <%}%>
+            </tbody>
+        </table>
     </div>
 
     </div>

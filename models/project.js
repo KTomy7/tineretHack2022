@@ -9,7 +9,18 @@ const projectSchema = new mongoose.Schema({
     startDate: String,
     endDate: String,
     location: String,
-    image: String
+    image: String,
+    services: [{
+        nume: String,
+        cantitate: Number,
+        unitateMasura: String,
+        pretUnitarMaterial: Number,
+        pretUnitarManopera: Number,
+        pretUnitarTotal: Number,
+        valoareTotalaMaterial: Number,
+        valoareTotalaManopera: Number,
+        valoareTotala: Number
+    }]
 })
 
 module.exports = mongoose.model('Project', projectSchema);
