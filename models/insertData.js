@@ -32,7 +32,6 @@ const seedData = async () => {
         { name: 'Apahida' },
         { name: 'Belis' },
         { name: 'Huedin' },
-        { name: 'Cluj Napoca' },
         { name: 'Dej' },
         { name: 'Mociu' },
         { name: 'Gilau' }
@@ -47,11 +46,18 @@ const seedData = async () => {
             newServiceArray[i] = servicesArray[i][j];
         }
     }
-    console.log("buuuun", newServiceArray);
+    newServiceArray[1] = 58.20;
+    newServiceArray[2] = "m"
+    newServiceArray[3] = 13.16;
+    newServiceArray[4] = 19.2;
+    newServiceArray[5] = 32.36;
+    newServiceArray[6] = 765.91;
+    newServiceArray[7] = 1117.74;
+    newServiceArray[8] = 1183.35;
 
     await Project.insertMany([
         {
-            name: "Pavaj in Turda", totalCost: 69, company: "Fratii Jder SRL", description: "100% cinstit", startDate: "10-10-2012", endDate: "12-12-2012", location: "Turda", image: "https://images.unsplash.com/photo-1626885930974-4b69aa21bbf9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fGNvbnN0cnVjdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+            name: "Pavaj strada Barbu Lautaru", totalCost: 69, company: "Fratii Jder SRL", description: "Se monteaza pavaj pentru trotuar, pe ambele parti", startDate: "10-10-2012", endDate: "12-12-2012", location: "Turda", image: "https://images.unsplash.com/photo-1626885930974-4b69aa21bbf9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fGNvbnN0cnVjdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
             services: [{
                 nume: newServiceArray[0],
                 cantitate: newServiceArray[1],
@@ -59,21 +65,42 @@ const seedData = async () => {
                 pretUnitarMaterial: newServiceArray[3],
                 pretUnitarManopera: newServiceArray[4],
                 pretUnitarTotal: newServiceArray[5],
-                valoareTotalaMaterial: newServiceArray[5],
-                valoareTotalaManopera: newServiceArray[5],
-                valoareTotala: newServiceArray[5]
+                valoareTotalaMaterial: newServiceArray[6],
+                valoareTotalaManopera: newServiceArray[7],
+                valoareTotala: newServiceArray[8]
+            },
+            {
+                nume: "	Furnizare şi montare conducte din PVC 160 mm",
+                cantitate: 69.5,
+                unitateMasura: "m",
+                pretUnitarMaterial: 24.24,
+                pretUnitarManopera: 19.2,
+                pretUnitarTotal: 43.44,
+                valoareTotalaMaterial: 1684.7,
+                valoareTotalaManopera: 1334.4,
+                valoareTotala: 3019.08
+            },
+            {
+                nume: "	Furnizare şi montare cot PVC 160 mm",
+                cantitate: 10,
+                unitateMasura: "buc",
+                pretUnitarMaterial: 6.12,
+                pretUnitarManopera: 4.9,
+                pretUnitarTotal: 11.02,
+                valoareTotalaMaterial: 61.2,
+                valoareTotalaManopera: 49,
+                valoareTotala: 110.2
             }]
         },
-        { name: "Amenajare camin cultural", totalCost: 69, company: "Fratii Jder SRL", description: "100% cinstit", startDate: "10-10-2012", endDate: "12-12-2012", location: "Turda", image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uc3RydWN0aW9ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60", products: null },
-        { name: "Modernizare birt", totalCost: 69, company: "Fratii Jder SRL", description: "100% cinstit", startDate: "10-10-2012", endDate: "12-12-2012", location: "Aiton", image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y29uc3RydWN0aW9ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60", products: null },
-        { name: "Modernizare gara", totalCost: 69, company: "Fratii Jder SRL", description: "100% cinstit", startDate: "10-10-2012", endDate: "12-12-2012", location: "Dej", image: "https://plus.unsplash.com/premium_photo-1661476116614-0b35face5f2a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGNvbnN0cnVjdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", products: null },
-        { name: "Restaurare Statuia Libertatii", totalCost: 69, company: "Fratii Jder SRL", description: "100% cinstit", startDate: "10-10-2012", endDate: "12-12-2012", location: "Beius City", image: "https://plus.unsplash.com/premium_photo-1661476116614-0b35face5f2a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGNvbnN0cnVjdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", products: null },
-        { name: "Restaurare Statuia PLM", totalCost: 69, company: "Fratii Jder SRL", description: "100% cinstit", startDate: "10-10-2012", endDate: "12-12-2012", location: "Turda", image: "https://plus.unsplash.com/premium_photo-1661476116614-0b35face5f2a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGNvbnN0cnVjdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", products: null }
+        { name: "Amenajare camin cultural", totalCost: 1000, company: "Fratii Jder SRL", description: "Renovare fatada cladirii si a primului etaj", startDate: "10-10-2012", endDate: "12-12-2012", location: "Turda", image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uc3RydWN0aW9ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60", products: null },
+        { name: "Modernizare gara", totalCost: 69, company: "Fratii Jder SRL", description: "Lucrari la sinele de tren, modernizare sistem audio", startDate: "10-10-2012", endDate: "12-12-2012", location: "Dej", image: "https://plus.unsplash.com/premium_photo-1661476116614-0b35face5f2a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGNvbnN0cnVjdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", products: null },
+        { name: "Restaurare Statuia Libertatii", totalCost: 69, company: "Fratii Jder SRL", description: "Proiect nou", startDate: "10-10-2012", endDate: "12-12-2012", location: "Cluj-Napoca", image: "https://plus.unsplash.com/premium_photo-1661476116614-0b35face5f2a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGNvbnN0cnVjdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", products: null },
+        { name: "Renovare Scoala Generala", totalCost: 69, company: "Fratii Jder SRL", description: "Lucrari de renovare si izolare a cladirii", startDate: "10-10-2012", endDate: "12-12-2012", location: "Turda", image: "https://plus.unsplash.com/premium_photo-1661476116614-0b35face5f2a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGNvbnN0cnVjdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60", products: null }
     ]);
 
 
 
-    const admin = new Admin({ email: "admin@gmail.com", username: "admin", location: "Cluj-Napoca"});
+    const admin = new Admin({ email: "admin@gmail.com", username: "admin", location: "Cluj-Napoca" });
     const registeredAdmin = await Admin.register(admin, "admin");
 }
 
