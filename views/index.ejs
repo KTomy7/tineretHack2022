@@ -1,5 +1,4 @@
 <%- layout('layouts/boilerplate') %>
-
     <div class="container">
         <H1 class="d-flex m-2 align-items-center justify-content-center">Portal virtual pentru monitorizarea
             investitiilor publice</H1>
@@ -24,3 +23,147 @@
             </ul>
         </div>
     </div>
+
+    <style>
+        #map {
+            height: 400px;
+            /* The height is 400 pixels */
+            width: 100%;
+            /* The width is the width of the web page */
+        }
+    </style>
+
+    <div id="map"></div>
+
+    <script>// Initialize and add the map
+        function initMap() {
+            // The location of Uluru
+            const uluru = { lat: 46.7642382135598, lng: 23.576425799878123 };
+            const turda = { lat: 46.558234912678834, lng: 23.806046325000665 };
+            const aiton = { lat: 46.685743, lng: 23.737185 };
+            const gherla = { lat: 47.028375, lng: 23.906808 };
+            const belis = { lat: 46.683375, lng: 23.026314 };
+            const huedin = { lat: 46.864805, lng: 23.024865 };
+            // The map, centered at Uluru
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 9,
+                center: uluru,
+            });
+
+            const marker = new google.maps.Marker({
+                position: turda,
+                map: map,
+                title: `Turda`
+            });
+
+            const markerAiton = new google.maps.Marker({
+                position: aiton,
+                map: map,
+                title: `Aiton`
+            });
+
+            const markerGherla = new google.maps.Marker({
+                position: gherla,
+                map: map,
+                title: `Gherla`
+            });
+
+            const markerBelis = new google.maps.Marker({
+                position: belis,
+                map: map,
+                title: `Belis`
+            });
+
+            const markerHuedin = new google.maps.Marker({
+                position: huedin,
+                map: map,
+                title: `Huedin`
+            });
+
+            const contentTurda =
+                '<p>Turda, <a href="http://localhost:3000/location/Turda">' +
+                "Vezi lucrari</a>";
+
+            const infoTurda = new google.maps.InfoWindow({
+                content: contentTurda,
+                ariaLabel: "Turda",
+            });
+
+            marker.addListener("click", () => {
+                infoTurda.open({
+                    anchor: marker,
+                    map,
+                });
+            });
+
+            const contentAiton =
+                '<p>Aiton, <a href="http://localhost:3000/location/Aiton">' +
+                "Vezi lucrari</a>";
+
+            const infoAiton = new google.maps.InfoWindow({
+                content: contentAiton,
+                ariaLabel: "Aiton",
+            });
+
+            markerAiton.addListener("click", () => {
+                infoAiton.open({
+                    anchor: markerAiton,
+                    map,
+                });
+            });
+
+            const contentGherla =
+                '<p>Gherla, <a href="http://localhost:3000/location/Gherla">' +
+                "Vezi lucrari</a>";
+
+            const infoGherla = new google.maps.InfoWindow({
+                content: contentGherla,
+                ariaLabel: "Gherla",
+            });
+
+            markerGherla.addListener("click", () => {
+                infoGherla.open({
+                    anchor: markerGherla,
+                    map,
+                });
+            });
+
+            const contentBelis =
+                '<p>Belis, <a href="http://localhost:3000/location/Belis">' +
+                "Vezi lucrari</a>";
+
+            const infoBelis = new google.maps.InfoWindow({
+                content: contentBelis,
+                ariaLabel: "Belis",
+            });
+
+            markerBelis.addListener("click", () => {
+                infoBelis.open({
+                    anchor: markerBelis,
+                    map,
+                });
+            });
+
+            const contentHuedin =
+                '<p>Huedin, <a href="http://localhost:3000/location/Hudein">' +
+                "Vezi lucrari</a>";
+
+            const infoHuedin = new google.maps.InfoWindow({
+                content: contentHuedin,
+                ariaLabel: "Huedin",
+            });
+
+            markerHuedin.addListener("click", () => {
+                infoHuedin.open({
+                    anchor: markerHuedin,
+                    map,
+                });
+            });
+        }
+
+        window.initMap = initMap;
+    </script>
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8xxiRBagn0AI2cojpXdd7Frf0QjaiQ6k&callback=initMap&v=weekly"
+        defer></script>

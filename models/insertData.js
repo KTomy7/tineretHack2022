@@ -27,7 +27,10 @@ const seedData = async () => {
         { name: 'Aiton' },
         { name: 'Alunis' },
         { name: 'Apahida' },
-        { name: 'Beius City' }
+        { name: 'Belis' },
+        { name: 'Huedin' },
+        { name: 'Cluj Napoca' },
+        { name: 'Dej' }
     ]);
 
     await Project.insertMany([
