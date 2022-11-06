@@ -18,7 +18,8 @@ const router = express.Router();
 
 // Show
 router.get('/index', isLoggedIn, async (req, res) => {
-    const projects = await Project.find({});
+    const location = req.user.location;
+    const projects = await Project.find({"location": location});
     res.render('./admin/index', { projects });
 });
 
@@ -28,7 +29,10 @@ router.get('/new', isLoggedIn, (req, res) => {
 });
 
 router.post('/', isLoggedIn, upload.single('file'), async (req, res) => {   
-    const project = new Project(req.body);
+    const { name, description, startDate, endDate } = req.body;
+    const location = req.user.location;
+    const image = 'https://images.unsplash.com/photo-1583751636643-94790958040a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1182&q=80';
+    const project = new Project({ name, description, startDate, endDate, location, image });
     await project.save();
     res.redirect('/admin/index');
 });
