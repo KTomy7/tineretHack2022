@@ -47,6 +47,8 @@
             const gherla = { lat: 47.028375, lng: 23.906808 };
             const belis = { lat: 46.683375, lng: 23.026314 };
             const huedin = { lat: 46.864805, lng: 23.024865 };
+            const mociu = { lat: 46.796629, lng: 24.030371 };
+            const gilau = { lat: 46.754327, lng: 23.387954 };
             // The map, centered at Uluru
             const map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 9,
@@ -81,6 +83,18 @@
                 position: huedin,
                 map: map,
                 title: `Huedin`
+            });
+
+            const markerMociu = new google.maps.Marker({
+                position: mociu,
+                map: map,
+                title: `Mociu`
+            });
+
+            const markerGilau = new google.maps.Marker({
+                position: gilau,
+                map: map,
+                title: `Gilau`
             });
 
             const contentTurda =
@@ -162,6 +176,39 @@
                     map,
                 });
             });
+
+            const contentMociu =
+                '<p>Mociu, <a href="http://localhost:3000/location/Mociu">' +
+                "Vezi lucrari</a>";
+
+            const infoMociu = new google.maps.InfoWindow({
+                content: contentMociu,
+                ariaLabel: "Mociu",
+            });
+
+            markerMociu.addListener("click", () => {
+                infoMociu.open({
+                    anchor: markerMociu,
+                    map,
+                });
+            });
+
+            const contentGilau =
+                '<p>Gilau, <a href="http://localhost:3000/location/Gilau">' +
+                "Vezi lucrari</a>";
+
+            const infoGilau = new google.maps.InfoWindow({
+                content: contentGilau,
+                ariaLabel: "Gilau",
+            });
+
+            markerGilau.addListener("click", () => {
+                infoGilau.open({
+                    anchor: markerGilau,
+                    map,
+                });
+            });
+
         }
 
         window.initMap = initMap;
