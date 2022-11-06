@@ -58,7 +58,7 @@ const seedData = async () => {
 
 
 
-    const admin = new Admin({ email: "admin@gmail.com", username: "admin" });
+    const admin = new Admin({ email: "admin@gmail.com", username: "admin", location: "Cluj-Napoca"});
     const registeredAdmin = await Admin.register(admin, "admin");
 }
 
