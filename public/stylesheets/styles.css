@@ -1,13 +1,13 @@
 .pencil {
     color: gray;
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
 }
 
 .trash {
     color: red;
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
 }
 
 .button, button:focus {

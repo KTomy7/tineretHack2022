@@ -1,29 +1,37 @@
 <%- layout('layouts/boilerplate') %>
 
-<div class="container border rounded-3 my-5">
-    <h1 class="display1 text-center my-5">Editare proiect</h1>
-    <form action="/admin/<%= project._id %>?_method=PUT" method="POST">
-        <div class="mb-3">
-          <label for="project" class="form-label">Numele proiectului:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="project"
-            aria-describedby="project"
-            name="name" 
-            value="<%= project.name %>"/>
-        </div>
-        <div class="mb-3">
-          <label for="description" class="form-label d-block">Descrierea proiectului:</label>
-          <textarea
-            id="description"
-            name="description"
-            rows="10"
-            style="width: 100%"><%= project.description %></textarea>
-        </div>
+<h1 class="text-center my-4">Editeaza proiectul</h1>
 
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <button class="btn btn-dark">Actualizare</button>
+<div class="row">
+  <div class="col-6 offset-3">
+    <form action="/admin/<%= project._id %>?_method=PUT" method="POST">
+      <div class="mb-3">
+        <label for="project" class="form-label">Numele proiectului:</label>
+        <input type="text" class="form-control" id="project" name="name" value="<%= project.name %>"/>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Descrierea proiectului:</label>
+        <textarea id="description" class="form-control" name="description" rows="5" style="width: 100%"><%= project.description %></textarea>
+      </div>
+      <div class="row mb-3 justify-content-start">
+        <div class="col-3">
+          <label for="stardDate" class="form-label">Data inceperii:</label>
         </div>
-      </form>
+        <div class="col-3">
+          <input class="me-3" type="date" name="startDate" id="startDate" style="width: 100%" value="<%= project.stardDate %>"/>    
+        </div>
+      </div>
+      <div class="row mb-3 justify-content-start">
+        <div class="col-3">
+          <label for="endDate" class="form-label">Data finalizarii:</label>
+        </div>
+        <div class="col-3">
+          <input type="date" name="endDate" id="endDate" style="width: 100%" value="<%= project.endDate %>" />
+        </div>
+      </div>
+      <div class="mb-3 text-center">
+        <button class="btn btn-lg btn-dark">Actualizare</button>
+      </div>
+    </form>
+  </div>
 </div>

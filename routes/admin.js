@@ -8,9 +8,8 @@ var storage = multer.diskStorage({
     filename: function (req, file, cb) {
       cb(null, Date.now() + '.pdf') //Appending .pdf
     }
-  })
-  
-  var upload = multer({ storage: storage });
+});
+var upload = multer({ storage: storage });
 
 const Project = require('../models/project');
 const { isLoggedIn } = require('../middleware');
@@ -38,8 +37,7 @@ router.post('/', isLoggedIn, upload.single('file'), async (req, res) => {
 router.get('/:id/edit', isLoggedIn, async (req, res) => {
     const project = await Project.findById(req.params.id);
     if (!project) {
-        req.flash('error', 'Cannot find that campground!');
-        return res.redirect('/campgrounds');
+        return res.redirect('/admin/index');
     }
     res.render('./admin/edit', { project });
 });
